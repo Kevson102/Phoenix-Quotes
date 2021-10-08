@@ -1,3 +1,10 @@
+.section{
+  background-color: #F9AFF1;
+}
+.mid {
+  margin: 5px;
+  height: 400px;
+}
 .quote {
   color: blueviolet;
 }
