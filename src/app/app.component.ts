@@ -7,10 +7,7 @@ import { Quote } from './quote';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  quotes:Quote[] =[
-    {quoteId: 1, quoteStatement: 'Make Hay when the sun shine'},
-    {quoteId: 2, quoteStatement: 'All that glitters is not gold'}
-  ]
+
 
   constructor(){  }
 }
