@@ -9,9 +9,13 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes:Quote[] =[
-    {quoteId: 1, quoteStatement: 'Make Hay when the sun shine', quoteAuthor: 'Martin Luther', quotePublisher: 'Kevson'},
-    {quoteId: 2, quoteStatement: 'All that glitters is not gold', quoteAuthor: 'Geoffrey', quotePublisher: 'Kelvin'}
+    new Quote(1, 'Make Hay when the sun shine', 'Martin Luther', 'Kevson'),
+    new Quote(2, 'All that glitters is not gold', 'Geoffrey', 'Kelvin')
   ]
+
+  toggleDetails(index: number){
+    this.quotes[index].showDetails = !this.quotes[index].showDetails;
+  }
 
   constructor() { }
 

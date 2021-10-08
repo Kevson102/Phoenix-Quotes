@@ -1,9 +1,33 @@
 <div class="text-center">
   <h1>Phoenix Quotes</h1>
-  <ul *ngFor = 'let quote of quotes'>
+  <ul *ngFor = 'let quote of quotes; let i = index'>
     <li>
-      {{quote.quoteStatement}}
-      <app-quote-detail [quote] = 'quote'></app-quote-detail>
+      <em class="quote">"{{quote.quoteStatement}}"</em> <br>
+      <button (click)='toggleDetails(i)'>Toggle Details</button>
+      <app-quote-detail *ngIf='quote.showDetails' [quote] = 'quote'></app-quote-detail>
     </li>
   </ul>
 </div>
+
+<!-- <div class="container-fluid">
+  <h1 class="text-center section">Phonix Quotes</h1>
+  <div class="row">
+    <div class="col-md-4 section section1">
+      <h2 class="text-center">About Phoenix quotes</h2>
+      <p class="text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Tortor aliquam nulla facilisi cras fermentum odio eu. In ornare quam viverra orci sagittis. Vulputate odio ut enim blandit volutpat. Rutrum quisque non tellus orci ac auctor augue. Scelerisque viverra mauris in aliquam sem. Eros donec ac odio tempor orci dapibus ultrices in. Aliquam etiam erat velit scelerisque in dictum non consectetur a. Lectus nulla at volutpat diam ut venenatis. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Vitae justo eget magna fermentum iaculis eu non diam. Eros in cursus turpis massa tincidunt. Lacinia at quis risus sed vulputate odio ut enim blandit.
+      </p>
+    </div>
+    <div class="col-md-3 section mid">
+      <h2 class="text-center">Please enter your quote here</h2>
+
+    </div>
+    <div class="col-md-4">
+      <h3 class="text-center">Your Quote will be displayed here</h3>
+
+    </div>
+  </div>
+  </div> -->
