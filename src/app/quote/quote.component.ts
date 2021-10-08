@@ -9,8 +9,8 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes:Quote[] =[
-    {quoteId: 1, quoteStatement: 'Make Hay when the sun shine'},
-    {quoteId: 2, quoteStatement: 'All that glitters is not gold'}
+    {quoteId: 1, quoteStatement: 'Make Hay when the sun shine', quoteAuthor: 'Martin Luther', quotePublisher: 'Kevson'},
+    {quoteId: 2, quoteStatement: 'All that glitters is not gold', quoteAuthor: 'Geoffrey', quotePublisher: 'Kelvin'}
   ]
 
   constructor() { }
