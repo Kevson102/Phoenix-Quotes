@@ -15,13 +15,13 @@
 
     </div>
     <div class="col-md-4 text-center">
-      <h3 >Your Quote will be displayed here</h3>
+      <h3 >Published Quotes</h3>
       <div>
         <ol *ngFor = 'let quote of quotes; let i = index'>
           <p class="card">
             <em class="quote ">"{{quote.quoteStatement}}"</em> <br>
             <button class="btn btn-sm btn-info" (click)='toggleDetails(i)'>Toggle Details</button>
-            <app-quote-detail *ngIf='quote.showDetails' [quote] = 'quote'></app-quote-detail>
+            <app-quote-detail *ngIf='quote.showDetails' [quote] = 'quote' (isRead) = 'readQuote($event, i)'></app-quote-detail>
           </p>
         </ol>
       </div>

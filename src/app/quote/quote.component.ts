@@ -17,6 +17,12 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].showDetails = !this.quotes[index].showDetails;
   }
 
+  readQuote(isRead:boolean, index: number){
+    if (isRead){
+      this.quotes.splice(index,1)
+    }
+  }
+
   constructor() { }
 
   ngOnInit() {
