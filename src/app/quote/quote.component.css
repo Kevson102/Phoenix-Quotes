@@ -2,7 +2,8 @@
   background-color: #F9AFF1;
 }
 .mid {
-  margin: 5px;
+  margin-right: 25px;
+  margin-left: 25px;
   height: 400px;
 }
 .quote {
