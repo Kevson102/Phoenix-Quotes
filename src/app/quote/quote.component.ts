@@ -11,14 +11,14 @@ export class QuoteComponent implements OnInit {
   quotes:Quote[] =[
     new Quote(1, 'Make Hay when the sun shine', 'Martin Luther', 'Kevson'),
     new Quote(2, 'All that glitters is not gold', 'Geoffrey', 'Kelvin')
-  ]
+  ];
 
   toggleDetails(index: number){
     this.quotes[index].showDetails = !this.quotes[index].showDetails;
   }
 
-  readQuote(isRead:boolean, index: number){
-    if (isRead){
+  deleteQuote(isUnwanted:boolean, index: number){
+    if (isUnwanted){
       this.quotes.splice(index,1)
     }
   }

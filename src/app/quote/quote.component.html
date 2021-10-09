@@ -21,7 +21,7 @@
           <p class="card">
             <em class="quote ">"{{quote.quoteStatement}}"</em> <br>
             <button class="btn btn-sm btn-info" (click)='toggleDetails(i)'>Toggle Details</button>
-            <app-quote-detail *ngIf='quote.showDetails' [quote] = 'quote' (isRead) = 'readQuote($event, i)'></app-quote-detail>
+            <app-quote-detail *ngIf='quote.showDetails' [quote] = 'quote' (isUnwanted) = 'deleteQuote($event, i)'></app-quote-detail>
           </p>
         </ol>
       </div>

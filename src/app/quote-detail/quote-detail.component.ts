@@ -9,14 +9,14 @@ import { Quote } from '../quote';
 export class QuoteDetailComponent implements OnInit {
   
   @Input() quote:Quote;
-  @Output() isRead = new EventEmitter<boolean>();
+  @Output() isUnwanted = new EventEmitter<boolean>();
 
-  quoteRead(read:boolean){
-    this.isRead.emit(read);
+  quoteDelete(unwanted: boolean) {
+    this.isUnwanted.emit(unwanted);
   }
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
