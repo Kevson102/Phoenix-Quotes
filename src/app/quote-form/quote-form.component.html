@@ -2,15 +2,24 @@
   <h2 class="text-center">Post a quote</h2>
   <form action="" class="center-block text-center" #quoteForm='ngForm'>
     <div class="input">
-      <input type="text" class="form-control" id="quoteAuthor" name="quoteAuthor" placeholder="Author's Name..." [(ngModel)]="newQuote.quoteAuthor" required>
+      <input type="text" class="form-control" id="quoteAuthor" name="quoteAuthor" placeholder="Author's Name..." [(ngModel)]="newQuote.quoteAuthor" #quoteAuthor='ngModel' required>
+      <div [hidden] = "quoteAuthor.valid || quoteAuthor.pristine" class="alert alert-danger">
+        <p>Required</p>
+      </div>
     </div>
 
     <div class="input">
-      <input type="text" class="form-control" id="writer" name="quotePublisher" placeholder="Your Name..."[(ngModel)]="newQuote.quotePublisher" required>
+      <input type="text" class="form-control" id="writer" name="quotePublisher" placeholder="Your Name..."[(ngModel)]="newQuote.quotePublisher" #quotePublisher='ngModel' required>
+      <div [hidden] = "quotePublisher.valid || quotePublisher.pristine" class="alert alert-danger">
+        <p>Required</p>
+      </div>
     </div>
 
     <div class="input">
-      <textarea name="quote" id="quote" class="form-control" name="quoteStatement" cols="40" rows="4" placeholder=" Please enter your quote here"[(ngModel)]="newQuote.quoteStatement" required></textarea>
+      <textarea name="quote" id="quote" class="form-control" name="quoteStatement" cols="40" rows="4" placeholder=" Please enter your quote here"[(ngModel)]="newQuote.quoteStatement" #quoteStatement='ngModel' required></textarea>
+      <div [hidden] = "quoteStatement.valid || quoteStatement.pristine" class="alert alert-danger">
+        <p>Required</p>
+      </div>
     </div>
 
     <button type="submit" class="btn btn-primary btn-success"><strong>Publish</strong></button>
