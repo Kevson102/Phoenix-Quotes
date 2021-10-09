@@ -11,7 +11,7 @@
       </p>
     </div>
     <div class="col-md-4 mid">
-      <app-quote-form></app-quote-form>
+      <app-quote-form (addQuote) = "addNewQuote($event)"></app-quote-form>
     </div>
     <div class="col-md-4 text-center">
       <h3 >Published Quotes</h3>

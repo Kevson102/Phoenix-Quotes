@@ -1,6 +1,7 @@
 <div class="sectionform">
   <h2 class="text-center">Post a quote</h2>
-  <form action="" class="center-block text-center" #quoteForm='ngForm'>
+  <form action="" class="center-block text-center" #quoteForm='ngForm' (ngSubmit)='postQuote()'>
+
     <div class="input">
       <input type="text" class="form-control" id="quoteAuthor" name="quoteAuthor" placeholder="Author's Name..." [(ngModel)]="newQuote.quoteAuthor" #quoteAuthor='ngModel' required>
       <div [hidden] = "quoteAuthor.valid || quoteAuthor.pristine" class="alert alert-danger">
