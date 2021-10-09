@@ -1,16 +1,24 @@
-<h2 class="text-center">Post a quote</h2>
-<form action="" class="center-block">
-  <div class="">
-    <input type="text" class="form-control" id="author" name="author" placeholder="Author's Name" required> <br>
-  </div>
+<div class="sectionform">
+  <h2 class="text-center">Post a quote</h2>
+  <form action="" class="center-block text-center" #quoteForm='ngForm'>
+    <div class="input">
+      <input type="text" class="form-control" id="quoteAuthor" name="quoteAuthor" placeholder="Author's Name..." [(ngModel)]="newQuote.quoteAuthor" required>
+    </div>
 
-  <div class="">
-    <input type="text" class="form-control" id="writer" placeholder="Your Name" required> <br>
-  </div>
+    <div class="input">
+      <input type="text" class="form-control" id="writer" name="quotePublisher" placeholder="Your Name..."[(ngModel)]="newQuote.quotePublisher" required>
+    </div>
 
-  <div class="">
-    <textarea name="quote" id="quote" class="form-control" cols="40" rows="4" placeholder=" Please enter your quote here" required></textarea> <br>
-  </div>
+    <div class="input">
+      <textarea name="quote" id="quote" class="form-control" name="quoteStatement" cols="40" rows="4" placeholder=" Please enter your quote here"[(ngModel)]="newQuote.quoteStatement" required></textarea>
+    </div>
 
-  <button type="submit" class="btn btn-primary btn-success"><strong>Publish</strong></button>
-</form>
+    <button type="submit" class="btn btn-primary btn-success"><strong>Publish</strong></button>
+  </form>
+</div>
+<div class="varify">
+  <h3>The Info below will be posted</h3>
+  <p>Author: {{newQuote.quoteAuthor}}</p>
+  <!-- <p>publisher: {{newQuote.quotePublisher}}</p>
+  <p>Quote: {{newQuote.quoteStatement}}</p> -->
+</div>
