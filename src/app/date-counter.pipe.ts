@@ -5,31 +5,31 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DateCounterPipe implements PipeTransform {
 
-  transform(value: any): string {
-    let timeCount: string = "";
-    let today: any = new Date();
-    var difference = Math.abs(value - today) / 1000;
-    var days       = Math.floor(difference / 86400);
-    if(days > 0){
-      timeCount   += Math.floor(days) +" days ";
+  transform(entry: any): string {
+    let timeElapsed: string = "";
+    let currentDate: any = new Date();
+    var dateDifference = Math.abs(entry - currentDate) / 1000;
+    var NoOfDays = Math.floor(dateDifference / 86400);
+    if(NoOfDays > 0){
+      timeElapsed   += Math.floor(NoOfDays) +" days ";
     }
-    difference    -= days * 86400;
-    var hours      = Math.floor(difference / 3600) % 24;
-    if(hours > 0){
-      timeCount   += Math.floor(hours)+" hrs ";
+    dateDifference -= NoOfDays * 86400;
+    var NoOfHours = Math.floor(dateDifference / 3600) % 24;
+    if(NoOfHours > 0){
+      timeElapsed += Math.floor(NoOfHours)+" hrs ";
     }
-    difference    -= hours * 3600;
+    dateDifference -= NoOfHours * 3600;
 
-    var minutes    = Math.floor(difference / 60) % 60;
-    if(minutes > 0){
-      timeCount   += Math.floor(minutes)+" mins ";
+    var NoOfMinutes = Math.floor(dateDifference / 60) % 60;
+    if(NoOfMinutes > 0){
+      timeElapsed += Math.floor(NoOfMinutes)+" mins ";
     }
-    difference    -= minutes * 60;
-    var seconds    = difference % 60;
-    if(seconds > 0){
-      timeCount  += Math.floor(seconds)+" secs ";
+    dateDifference -= NoOfMinutes * 60;
+    var NoOfSeconds    = dateDifference % 60;
+    if(NoOfSeconds > 0){
+      timeElapsed  += Math.floor(NoOfSeconds)+" secs ";
     }
-    return timeCount;
+    return timeElapsed;
   }
 
 }
