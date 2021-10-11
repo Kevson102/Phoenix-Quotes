@@ -1,0 +1,9 @@
+.text-left{
+  text-align: left;
+}
+small{
+  font-size: 12px;
+}
+.delete{
+  text-align: right;
+}

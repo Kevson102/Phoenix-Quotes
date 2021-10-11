@@ -15,3 +15,11 @@
   margin-bottom: 0;
   margin-left: 15px;
 }
+small{
+  font-size: 12px;
+}
+.publish{
+  background-color: #43B7DC;
+  border-radius: 110px;
+  margin-bottom: 10px;
+}
