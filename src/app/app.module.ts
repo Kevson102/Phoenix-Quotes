@@ -8,6 +8,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { RankingDirective } from './ranking.directive';
+import { DateCounterPipe } from './date-counter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RankingDirective } from './ranking.directive';
     QuoteComponent,
     QuoteDetailComponent,
     QuoteFormComponent,
-    RankingDirective
+    RankingDirective,
+    DateCounterPipe
   ],
   imports: [
     BrowserModule,
