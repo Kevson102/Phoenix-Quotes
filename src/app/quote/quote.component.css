@@ -42,3 +42,9 @@ footer{
 footer>p{
   padding: 10px;
 }
+@media screen and (max-width:768px) {
+  .mid{
+    margin-top: 10px;
+  }
+
+}
