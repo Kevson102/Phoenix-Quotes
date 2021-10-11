@@ -8,6 +8,8 @@ import { Quote } from './quote';
 })
 export class AppComponent {
 
+  votes = 0;
+  
 
   constructor(){  }
 }

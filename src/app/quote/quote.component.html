@@ -20,8 +20,9 @@
           <p class="card">
             <em class="quote ">"{{quote.quoteStatement}}"</em> <br>
             <span>
-              <button class="btn btn-success"><small>Upvote</small></button>
-              <button class="btn btn-danger"><small>Downvote</small></button>
+              <button class="btn btn-success" (click) = 'voteForQuote(quote, 0)'><small>Upvote</small></button>
+              {{quote.upvotes}}
+              <button class="btn btn-danger" (click) = 'voteForQuote(quote, 1)'><small>Downvote</small></button>
             </span>
             <button class="btn btn-sm btn-info" (click)='toggleDetails(i)'>Toggle Details</button>
             <app-quote-detail *ngIf='quote.showDetails' [quote] = 'quote' (isUnwanted) = 'deleteQuote($event, i)'></app-quote-detail>
