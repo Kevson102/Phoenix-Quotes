@@ -30,21 +30,6 @@ export class QuoteComponent implements OnInit {
     }
   }
 
-  // rankQuotes(): void{
-  //   let upvoted: number   = Math.max.apply(Math,this.getQuotes().map(function(chosen){return chosen.upvotes;}));
-  //   if( upvoted > 0){
-  //       let upvotedQuote: any = this.getQuotes().find(function(selected){ return selected.upvotes == upvoted; });
-  //       let favIndex: number  = this.getQuotes().indexOf(upvotedQuote);
-  //       this.getQuotes().map((quote)=>{
-  //           if(favIndex === this.getQuotes().indexOf(quote)){
-  //               this.quotes[favIndex].isFavorite = true;
-  //           }else{
-  //               quote.isFavorite = false;
-  //           }
-  //       });
-  //   }
-  // }
-
   toggleDetails(index: number){
     this.quotes[index].showDetails = !this.quotes[index].showDetails;
   }
