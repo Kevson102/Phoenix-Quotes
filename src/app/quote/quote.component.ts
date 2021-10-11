@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { globalAgent } from 'http';
 import { Quote } from '../quote';
 
 @Component({
@@ -9,40 +10,26 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes:Quote[] =[
-    new Quote(1, 'Make Hay when the sun shine', 'Martin Luther', 'Kevson', 0, 0, false, new Date(2020,5,20)),
-    new Quote(2, 'All that glitters is not gold', 'Geoffrey', 'Kelvin', 0, 0, false, new Date(2019,6,13))
+    new Quote(1, 'Make Hay when the sun shine', 'Martin Luther', 'Kevson', 0, 0, false, new Date(2030,5,20)),
+    new Quote(2, 'All that glitters is not gold', 'Geoffrey', 'Kelvin', 0, 0, false, new Date(2015,6,13))
   ];
 
   addNewQuote(quote:any){
     let quoteLength = this.quotes.length;
     quote.quoteId = quoteLength +1;
+    quote.date = new Date(quote.date);
     this.quotes.push(quote);
   }
 
-  getQuotes(){
+  readQuotes(){
     return this.quotes;
   }
 
   voteForQuote(quote:any,type:number){
-    if(this.getQuotes().indexOf(quote) >= 0){
-        type === 0 ? this.getQuotes()[this.getQuotes().indexOf(quote)].upvotes++ : this.getQuotes()[this.getQuotes().indexOf(quote)].downvotes++;
-        // this.rankQuotes(); 
+    if(this.readQuotes().indexOf(quote) >= 0){
+        type === 0 ? this.readQuotes()[this.readQuotes().indexOf(quote)].upvotes++ : this.readQuotes()[this.readQuotes().indexOf(quote)].downvotes++;
     }
   }
-  // rankQuotes(): void{
-  //   let upvoted: number   = Math.max.apply(Math,this.getQuotes().map(function(chosen){return chosen.upvotes;}));
-  //   if( upvoted > 0){
-  //     let upvotedQuote: any = this.getQuotes().find(function(selected){ return selected.upvotes == upvoted; });
-  //     let favIndex: number  = this.getQuotes().indexOf(upvotedQuote);
-  //     this.getQuotes().map((quote)=>{
-  //       if(favIndex === this.getQuotes().indexOf(quote)){
-  //           this.quotes[favIndex].isFavorite = true;
-  //       }else{
-  //           quote.isFavorite = false;
-  //         }
-  //     });
-  //   }
-  // }
 
   toggleDetails(index: number){
     this.quotes[index].showDetails = !this.quotes[index].showDetails;

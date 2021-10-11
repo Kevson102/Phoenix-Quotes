@@ -19,7 +19,7 @@
         <ol *ngFor = 'let quote of quotes; let i = index'>
           <p class="card">
             <em class="quote ">"{{quote.quoteStatement}}"</em> <br>
-            posted on: {{quote.date | date}}
+            
             <span>
               <button class="btn btn-success" (click) = 'voteForQuote(quote, 0)'><small>Upvote</small></button>
 

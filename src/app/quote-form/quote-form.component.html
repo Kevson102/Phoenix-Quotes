@@ -23,6 +23,13 @@
       </div>
     </div>
 
+    <div class="input">
+      <input type="date" class="form-control" id="date" name="date" [(ngModel)]="newQuote.date" #date='ngModel' required>
+      <div [hidden] = "date.valid || date.pristine" class="alert alert-danger">
+        <p>Required</p>
+      </div>
+    </div>
+
     <button type="submit" class="btn btn-primary btn-success"><strong>Publish</strong></button>
 
   </form>

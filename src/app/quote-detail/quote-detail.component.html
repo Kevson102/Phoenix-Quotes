@@ -1,3 +1,7 @@
 <span><small>Upvotes: {{quote.upvotes}} Downvotes: {{quote.downvotes}}</small></span>
 <p><small><strong>By: </strong>{{quote.quoteAuthor}} </small> <small style="margin-left: 10px;"><strong>Publisher: </strong>{{quote.quotePublisher}}</small></p>
+posted on: {{quote.date | date}}
+time elapsed: {{quote.date | dateCounter}}
 <button class="btn btn-danger" (click)='quoteDelete(true)'>Delete Quote</button>
+
+
