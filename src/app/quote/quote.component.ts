@@ -9,8 +9,8 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes:Quote[] =[
-    new Quote(1, 'Make Hay when the sun shine', 'Martin Luther', 'Kevson'),
-    new Quote(2, 'All that glitters is not gold', 'Geoffrey', 'Kelvin')
+    new Quote(1, 'Make Hay when the sun shine', 'Martin Luther', 'Kevson', 0, 0),
+    new Quote(2, 'All that glitters is not gold', 'Geoffrey', 'Kelvin', 0, 0)
   ];
 
   addNewQuote(quote:any){
